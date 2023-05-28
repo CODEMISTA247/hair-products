@@ -1,4 +1,4 @@
-const Product = require('..//models/product');
+const Product = require('../models/product');
 
 module.exports = {
     // Get all Products 
@@ -23,17 +23,30 @@ module.exports = {
             })
     },
 
-    // Filter Products by Category
+    // OneProduct - For Details
+    getOneProduct: (req, res) => {
+        Product.findOne({ _id: req.params.id})
+            .then((oneProduct) => {
+                res.json(oneProduct)
 
-    filterByCategory: (req, res) => {
-        const category = req.params.category;
-        Product.find({ category: category })
-            .then((product) => {
-                res.json(product);
             })
             .catch((err) => {
-                res.status(500).json(err);
-            });
+                res.status(500).json(err)
+            })
+    },
+
+    // Filter Products by Category
+
+    filterByCategory: async (req, res) => {
+        try {
+            const category = req.params.category;
+            const products = await Product.find({ category: category });
+            console.log(await Product.find({ category: category })); // Console log to see if Products are being rerieved Correctly
+            res.send(products);
+        } catch (error) {
+            console.log(error);
+            res.status(500).send({ message: 'Error retrieving products' });
+        }
     },
 
     updateProduct: (req, res) => {

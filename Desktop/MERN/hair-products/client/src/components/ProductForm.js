@@ -46,8 +46,8 @@ const ProductForm = (props) => {
             <label className='form-label form-label b text-bg-dark text-light w-50 rounded-3'>Product Name:</label>
             <input className='form-control' type='text' value={product.name} name='name' onChange={handleInputChange}/>
 
-            <label className='form-label form-label b text-bg-dark text-light w-50 rounded-3' htmlFor='picture'>Picture URL:</label>
-            <input className='form-control' type='text' id='picture' name='picture' placeholder='Enter picture URL' value={product.picture} onChange={(e) => setProduct({...product, picture: e.target.value})} required />
+{/*             <label className='form-label form-label b text-bg-dark text-light w-50 rounded-3' htmlFor='picture'>Picture URL:</label>
+    <input className='form-control' type='text' id='picture' name='picture' placeholder='Enter picture URL' value={product.picture} onChange={(e) => setProduct({...product, picture: e.target.value})} required /> */}
 
             <label className='form-label form-label b text-bg-dark text-light w-50 rounded-3'>Product Description:</label>
             <input className='form-control' type='text' value={product.image} name='image' onChange={handleInputChange}/>

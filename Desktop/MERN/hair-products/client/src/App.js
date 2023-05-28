@@ -4,7 +4,13 @@ import {Routes, Route} from 'react-router-dom'
 import ProductForm from './components/ProductForm';
 import ProductList from './components/ProductList'; 
 import HairProducts from './components/HairProducts';
+import FacialProducts from './components/FacialProducts';
+import MakeupProducts from './components/MakeupProducts';
+import Cart from './components/Cart';
 import Nav from './components/Nav';
+import OneProduct from './components/OneProduct';
+import CartProduct from './components/CartProduct';
+
 
 function App() {
 
@@ -16,11 +22,16 @@ function App() {
 
     <Route path='/productForm' element={<ProductForm allProducts={allProducts} setAllProducts={setAllProducts}/>} /> 
     <Route path='/' element= {<ProductList allProducts={allProducts} setAllProducts={setAllProducts}/> } /> 
-
+    <Route path='/filterByCategory/hair' element={<HairProducts /> }/> 
+    <Route path='/filterByCategory/facial' element={<FacialProducts /> }/> 
+    <Route path='/filterByCategory/makeup' element={<MakeupProducts /> } />
+    <Route path='/oneProduct/:id' element={<OneProduct /> } />
+    <Route path='/cart' element={<Cart />} /> 
     
-    <Route path='/hair-products' element={<HairProducts allProducts={allProducts}/>}/> 
 
-    </Routes> 
+
+    </Routes>
+    
     </div>
   );
 }

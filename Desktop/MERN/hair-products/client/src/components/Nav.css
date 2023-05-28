@@ -1,0 +1,15 @@
+.home-button {
+    display: inline-block;
+    padding: 10px 20px;
+    font-size: 24px;
+    background-color: none;
+    text-decoration: none; 
+    color:black;
+    background-color: none;
+    border-bottom: 2px solid black;
+    transition: transform 0.3s ease;
+}
+
+.home-button:hover {
+    transform: scale(1.1)
+}
