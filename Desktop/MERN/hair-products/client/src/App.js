@@ -9,24 +9,29 @@ import MakeupProducts from './components/MakeupProducts';
 import Cart from './components/Cart';
 import Nav from './components/Nav';
 import OneProduct from './components/OneProduct';
-import CartProduct from './components/CartProduct';
+
 
 
 function App() {
 
   const [allProducts, setAllProducts] = useState([])
+  const [cartItems, setCartItems] = useState([])
+
   return (
     <div className="App">
     <Nav /> 
+    <br /> 
+    <br /> 
+    <br /> 
     <Routes>
 
     <Route path='/productForm' element={<ProductForm allProducts={allProducts} setAllProducts={setAllProducts}/>} /> 
-    <Route path='/' element= {<ProductList allProducts={allProducts} setAllProducts={setAllProducts}/> } /> 
+    <Route path='/' element= {<ProductList allProducts={allProducts} setAllProducts={setAllProducts} setCartItems={setCartItems}/> } /> 
     <Route path='/filterByCategory/hair' element={<HairProducts /> }/> 
     <Route path='/filterByCategory/facial' element={<FacialProducts /> }/> 
     <Route path='/filterByCategory/makeup' element={<MakeupProducts /> } />
     <Route path='/oneProduct/:id' element={<OneProduct /> } />
-    <Route path='/cart' element={<Cart />} /> 
+    <Route path='/cart' element={<Cart cartItems={cartItems} /> }/> 
     
 
 
